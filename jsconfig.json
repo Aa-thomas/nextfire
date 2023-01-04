@@ -5,9 +5,9 @@
          "@components/*":["components/*"],
          "@styles/*":["styles/*"],
          "@lib/*" : ["lib/*"],
-         "@firebase" : ["lib/firebase/*"],
-         "@hooks" : ["lib/hooks/*"],
-         "@utilities" : ["lib/utilities/*"],
+         "@firebase/*" : ["lib/firebase/*"],
+         "@hooks/*" : ["lib/hooks/*"],
+         "@utilities/*" : ["lib/utilities/*"],
       }
    }
 }
