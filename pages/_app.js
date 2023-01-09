@@ -7,13 +7,11 @@ import { useUserData } from '@hooks/useUserData';
 function MyApp({ Component, pageProps }) {
 	const userData = useUserData();
 	return (
-		<>
-			<UserContext.Provider value={userData}>
-				<Navbar />
-				<Component {...pageProps} />
-				<Toaster />
-			</UserContext.Provider>
-		</>
+		<UserContext.Provider value={userData}>
+			<Navbar />
+			<Component {...pageProps} />
+			<Toaster />
+		</UserContext.Provider>
 	);
 }
 

@@ -3,7 +3,6 @@ import { UserContext } from '@utilities/context';
 import { useEffect, useState, useCallback } from 'react';
 import { useContext } from 'react';
 import debounce from 'lodash.debounce';
-
 export default function EnterPage({}) {
 	const { user, username } = useContext(UserContext);
 
@@ -58,7 +57,6 @@ function UsernameMessage({ username, isValid, loading }) {
 	}
 }
 
-//
 function UserNameForm() {
 	const [formValue, setFormValue] = useState('');
 	const [isValid, setIsValid] = useState(false);
@@ -112,6 +110,7 @@ function UserNameForm() {
 	// Hit the database for username match after each debounced change
 	// useCallback is required for debounce to work
 	// npm install lodash.debounce for debounce to work
+
 	const checkUsername = useCallback(
 		debounce(async (username) => {
 			if (username.length >= 3) {
