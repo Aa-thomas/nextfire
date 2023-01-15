@@ -13,11 +13,13 @@
     "eslint-config-next": "13.1.1",
     "firebase": "^9.15.0",
     "lodash.debounce": "^4.0.8",
+    "lodash.kebabcase": "^4.1.1",
     "moment": "^2.29.4",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-firebase-hooks": "^5.1.1",
+    "react-hook-form": "^7.42.1",
     "react-hot-toast": "^2.4.0",
     "react-markdown": "^8.0.4"
   }

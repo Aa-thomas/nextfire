@@ -34,7 +34,7 @@ export default function Home(props) {
 
 		const cursor =
 			typeof last.createdAt === 'number'
-				? new Date(last.createdAt * 1000)
+				? fromMillis(last.createdAt * 1000)
 				: last.createdAt;
 
 		const query = firestore
@@ -52,6 +52,7 @@ export default function Home(props) {
 		if (newPosts.length < LIMIT) {
 			setPostsEnd(true);
 		}
+		console.log(newPosts);
 	};
 
 	return (
