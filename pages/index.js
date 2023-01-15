@@ -2,12 +2,14 @@ import PostFeed from '@components/PostFeed';
 import Loader from '@components/Loader';
 import { firestore, fromMillis, postToJSON } from '@firebase/firebaseConfig';
 import { useState } from 'react';
+import Metatags from '@components/MetaTags';
 
 // Max posts to query per page
 const LIMIT = 1;
 
 export async function getServerSideProps(context) {
 	const postsQuery = firestore
+		// .collectionGroup allows us to find any subcollection thats nested anywhere within
 		.collectionGroup('posts')
 		.where('published', '==', true)
 		.orderBy('createdAt', 'desc')
@@ -32,7 +34,7 @@ export default function Home(props) {
 
 		const cursor =
 			typeof last.createdAt === 'number'
-				? fromMillis(last.createdAt)
+				? new Date(last.createdAt * 1000)
 				: last.createdAt;
 
 		const query = firestore
@@ -54,6 +56,7 @@ export default function Home(props) {
 
 	return (
 		<main>
+			<Metatags title={'lil nextfire app'} />
 			<PostFeed posts={posts} />
 
 			{!loading && !postsEnd && (
